@@ -1,6 +1,6 @@
 //create var bounds
-var northWest = L.latLng(47, -125),
-	southEast = L.latLng(25, -70),
+var northWest = L.latLng(48, -118),
+	southEast = L.latLng(25, -79),
 	bounds = L.latLngBounds(northWest, southEast);
 
 //create map and use stamen terrain base
@@ -22,12 +22,5 @@ L.Control('topright', {
 }).addTo(map);
 */
 
-//Load texas boundary json and style
-var texasPoly = L.geoJson(texas, {
-    	style: function (feature) {
-        return {color: "#ff0000"};
-    		}
-			});
-
-texasPoly.addTo(map);
-//L.polygon(texasPoly, {transform: true}).addTo(map);
+//test polygon
+var polygon = new L.Polygon(txCoords, {draggable: true}).addTo(map);
